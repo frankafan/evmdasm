@@ -70,6 +70,8 @@ INSTRUCTIONS = [
     Instruction(opcode=0x47, name='SELFBALANCE', category="blockinfo", gas=5, description="Get own balance.", returns=[T.Gas("address(this).balance")]),
     Instruction(opcode=0x48, name='BASEFEE', category="blockinfo", gas=2, description="Get the value of the base fee of the current block.", returns=[T.Gas("block.basefee")]),
 
+    
+    Instruction(opcode=0x49, name='BLOBHASH', category="blockinfo", gas=3, description="Get versioned hashes.", args=[T.Index256("index")], returns=["block.blobVersionedHashesAtIndex"]),
 
     # Stack, Memory, Storage and Flow Operations
     Instruction(opcode=0x50, name='POP', category="stack", gas=2, description="Remove item from stack.", args=[T.Internal("#dummy")], ),
