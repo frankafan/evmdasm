@@ -86,6 +86,7 @@ INSTRUCTIONS = [
     Instruction(opcode=0x5a, name='GAS', category="info", gas=2, description="Get the amount of available gas, including the corresponding reduction", returns=[T.Gas("gasleft")]),
     Instruction(opcode=0x5b, name='JUMPDEST', category="label", gas=1, description="Mark a valid destination for jumps."),
     Instruction(opcode=0x5c, name='TLOAD', category="label", gas=100, description="Load word from transient storage.", args=[T.MemOffset("loc")], returns=[T.Word("value")]),
+    Instruction(opcode=0x5d, name='TSTORE', category="label", gas=100, description="Save word to transient storage.", args=[T.MemOffset("loc"), T.Word("value")]),
 
     # Stack Push Operations
     Instruction(opcode=0x60, name='PUSH1', category="stack", gas=3, length_of_operand=0x1, description="Place 1 byte item on stack.", returns=[T.Value("item")]),
