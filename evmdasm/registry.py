@@ -90,6 +90,7 @@ INSTRUCTIONS = [
     Instruction(opcode=0x5e, name='MCOPY', category="memory", gas=3, description="Copy memory areas.", args=[T.MemOffset("offset"), T.MemOffset("offset"), T.Length("length")]),
 
     # Stack Push Operations
+    Instruction(opcode=0x5f, name='PUSH0', category="stack", gas=2, description="Place value 0 on stack.", returns=[T.Value("item")]),
     Instruction(opcode=0x60, name='PUSH1', category="stack", gas=3, length_of_operand=0x1, description="Place 1 byte item on stack.", returns=[T.Value("item")]),
     Instruction(opcode=0x61, name='PUSH2', category="stack", gas=3, length_of_operand=0x2, description="Place 2-byte item on stack.", returns=[T.Value("item")]),
     Instruction(opcode=0x62, name='PUSH3', category="stack",  gas=3, length_of_operand=0x3, description="Place 3-byte item on stack.", returns=[T.Value("item")]),
