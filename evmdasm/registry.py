@@ -85,8 +85,12 @@ INSTRUCTIONS = [
     Instruction(opcode=0x59, name='MSIZE', category="memory", gas=2, description="Get the size of active memory in bytes.", returns=[T.Length("memory.length")]),
     Instruction(opcode=0x5a, name='GAS', category="info", gas=2, description="Get the amount of available gas, including the corresponding reduction", returns=[T.Gas("gasleft")]),
     Instruction(opcode=0x5b, name='JUMPDEST', category="label", gas=1, description="Mark a valid destination for jumps."),
+    Instruction(opcode=0x5c, name='TLOAD', category="label", gas=100, description="Load word from transient storage.", args=[T.MemOffset("loc")], returns=[T.Word("value")]),
+    Instruction(opcode=0x5d, name='TSTORE', category="label", gas=100, description="Save word to transient storage.", args=[T.MemOffset("loc"), T.Word("value")]),
+    Instruction(opcode=0x5e, name='MCOPY', category="memory", gas=3, description="Copy memory areas.", args=[T.MemOffset("offset"), T.MemOffset("offset"), T.Length("length")]),
 
     # Stack Push Operations
+    Instruction(opcode=0x5f, name='PUSH0', category="stack", gas=2, description="Place value 0 on stack.", returns=[T.Value("item")]),
     Instruction(opcode=0x60, name='PUSH1', category="stack", gas=3, length_of_operand=0x1, description="Place 1 byte item on stack.", returns=[T.Value("item")]),
     Instruction(opcode=0x61, name='PUSH2', category="stack", gas=3, length_of_operand=0x2, description="Place 2-byte item on stack.", returns=[T.Value("item")]),
     Instruction(opcode=0x62, name='PUSH3', category="stack",  gas=3, length_of_operand=0x3, description="Place 3-byte item on stack.", returns=[T.Value("item")]),
