@@ -36,8 +36,8 @@ INSTRUCTIONS = [
     Instruction(opcode=0x1c, name='SHR', category="bitwise-logic", gas=3, fork="constantinople", description="<TBD> Shift Right", args=[T.Index64('shift'), T.Value('value')], returns=[T.Value('result')]),
     Instruction(opcode=0x1d, name='SAR', category="bitwise-logic", gas=3, fork="constantinople", description="<TBD> Shift arithmetic right", args=[T.Index64('shift'), T.Value('value')], returns=[T.Bool('flag')]),
 
-    # SHA3
-    Instruction(opcode=0x20, name='SHA3', category="cryptographic", gas=30, description="Compute Keccak-256 hash.", args=[T.MemOffset('offset'), T.Length('size')], returns=[T.Value('sha3')]),
+    # KECCAK
+    Instruction(opcode=0x20, name='KECCAK256', category="cryptographic", gas=30, description="Compute Keccak-256 hash.", args=[T.MemOffset('offset'), T.Length('size')], returns=[T.Value('sha3')]),
 
     # Environmental Information
     Instruction(opcode=0x30, name='ADDRESS', category="envinfo", gas=2, description="Get address of currently executing account.", returns=[T.Address('this.address')]),
