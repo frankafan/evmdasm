@@ -72,6 +72,7 @@ INSTRUCTIONS = [
 
     
     Instruction(opcode=0x49, name='BLOBHASH', category="blockinfo", gas=3, description="Get versioned hashes.", args=[T.Index256("index")], returns=["block.blobVersionedHashesAtIndex"]),
+    Instruction(opcode=0x4a, name='BLOBBASEFEE', category="blockinfo", gas=2, description="Returns the value of the blob base-fee of the current block.", returns=[T.Gas("block.blobBaseFee")]),
 
     # Stack, Memory, Storage and Flow Operations
     Instruction(opcode=0x50, name='POP', category="stack", gas=2, description="Remove item from stack.", args=[T.Internal("#dummy")], ),
